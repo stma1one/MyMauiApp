@@ -48,7 +48,16 @@
                 x:Name="btnHide"
                 Margin="10"
                 Clicked="btnHide_Clicked"
-                Text="הסתר" />
+                ContentLayout="Left, 5"
+                ImageSource="eye_crossed.png"
+                Text="הסתר">
+                <Button.Shadow>
+                    <Shadow
+                        Brush="DarkBlue"
+                        Opacity="0.5"
+                        Offset="20,20" />
+                </Button.Shadow>
+            </Button>
 
         </HorizontalStackLayout>
 
@@ -61,7 +70,10 @@
                 TextChanged="Entry_TextChanged"
                 WidthRequest="300" />
             <Label x:Name="lblOldPass" />
-
+            <Image
+                x:Name="Imgbot"
+                Aspect="AspectFit"
+                Source="dotnet_bot.png" />
         </VerticalStackLayout>
     </VerticalStackLayout>
 
