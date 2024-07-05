@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MyMauiApp.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <VerticalStackLayout>
+        <!--  https://learn.microsoft.com/en-us/dotnet/maui/user-interface/controls/label  -->
+        <Label
+            FontAttributes="Bold"
+            FontFamily="RubikDoodle"
+            FontSize="Title"
+            HorizontalTextAlignment="Center"
+            Text="זוהי כותרת" />
+
+        <!--
+            אפשר לשלב ערכים של יוניקוד עבור ערכים מיוחדים כגון טאב
+            ירידת שורה ועוד
+        -->
+        <Label HorizontalOptions="Center" Text="זה טקסט של שורה ראשונה&#10;זה טקסט של שורה שניה" />
+
+        <!--  אם רוצים לשלוט בחלקים שונים של הטקסט בלי ליצור עוד תוויות  -->
+        <Label
+            Margin="15"
+            HorizontalTextAlignment="Center"
+            LineBreakMode="WordWrap"
+            MaxLines="2">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="ספאן מאפשר לשלוט בכל חלק בטקסט " />
+                    <Span Text=" כמו הצבע או" TextColor="Blue" />
+                    <Span
+                        FontAttributes="Bold"
+                        Text="  הגדרות נוספות"
+                        TextDecorations="Underline" />
+                    <Span FontSize="Large" Text=" כיף גדול" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+    </VerticalStackLayout>
+
+
+</ContentPage>
