@@ -37,6 +37,32 @@
                 </FormattedString>
             </Label.FormattedText>
         </Label>
+
+        <BoxView BackgroundColor="Blue" HeightRequest="5" />
+        <HorizontalStackLayout>
+            <Label
+                x:Name="lblHide"
+                Text="NOW YOU SEE ME"
+                VerticalOptions="Center" />
+            <Button
+                x:Name="btnHide"
+                Margin="10"
+                Clicked="btnHide_Clicked"
+                Text="הסתר" />
+
+        </HorizontalStackLayout>
+
+        <BoxView BackgroundColor="Blue" HeightRequest="5" />
+        <VerticalStackLayout>
+            <Label Margin="10" Text="סיסמה" />
+            <Entry
+                Completed="Entry_Completed"
+                ReturnType="Go"
+                TextChanged="Entry_TextChanged"
+                WidthRequest="300" />
+            <Label x:Name="lblOldPass" />
+
+        </VerticalStackLayout>
     </VerticalStackLayout>
 
 
