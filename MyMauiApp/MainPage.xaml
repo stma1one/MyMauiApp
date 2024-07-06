@@ -117,6 +117,8 @@
             <Label x:Name="lblOldPass" HorizontalOptions="Center" />
             <!--  OnIdion מאפשר ליצור הבדל עפי סוג מכשיר  -->
             <!--  OnPlatform מאפשר ליצור הבדל לפי מערכת הפעלה  -->
+            <!--  אפשר גם מהאינטרנט וגם GIF  -->
+            <!--  https://doumer.me/wp-content/uploads/2021/12/Introduction-to-dotnet-MAUI.png  -->
             <Image
                 x:Name="Imgbot"
                 Margin="{OnIdiom Tablet=-70}"
