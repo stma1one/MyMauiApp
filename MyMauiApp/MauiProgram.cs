@@ -16,6 +16,7 @@ namespace MyMauiApp
                     fonts.AddFont("Cinzel-VariableFont_wght.ttf", "CinzelVar");
                     fonts.AddFont("Pacifico-Regular.ttf", "Pacifico");
                     fonts.AddFont("RubikDoodleShadow-Regular.ttf", "RubikDoodle");
+                    fonts.AddFont("MaterialSymbolsOutlined-VariableFont-wght.ttf", "MaterialSymbolsOutlined");
                 });
 
 #if DEBUG

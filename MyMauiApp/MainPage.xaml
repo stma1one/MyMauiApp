@@ -24,7 +24,11 @@
             Margin="15"
             HorizontalTextAlignment="Center"
             LineBreakMode="WordWrap"
-            MaxLines="2">
+            MaxLines="3">
+            <!--
+                formattedText אם משתמשים בו כתכונה בלבד מאפשר לקבוע
+                פורמט של מספרים כגון נקודה עשרונית, תאריכים ועוד)
+            -->
             <Label.FormattedText>
                 <FormattedString>
                     <Span Text="ספאן מאפשר לשלוט בכל חלק בטקסט " />
@@ -33,24 +37,57 @@
                         FontAttributes="Bold"
                         Text="  הגדרות נוספות"
                         TextDecorations="Underline" />
+                    <Span Text="&#10;" />
+                    <!--
+                        אפשר להשתמש גם בפונט אייקון שניתן להוריד מ
+                        https://fonts.google.com/icons
+                        יש להסתכל על הערך המספרי שלהם
+                        בXAML
+                        צריך לתרגם אותם ליונקוד שלהם
+                        שזה פשוט &#x לפני הערך
+                        ו; בסוף
+                    -->
                     <Span FontSize="Large" Text=" כיף גדול" />
+                    <Span
+                        FontFamily="MaterialSymbolsOutlined"
+                        FontSize="35"
+                        Text="&#xf527;"
+                        TextColor="#43eb34" />
                 </FormattedString>
             </Label.FormattedText>
         </Label>
 
         <BoxView BackgroundColor="Blue" HeightRequest="5" />
-        <HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center">
+
+            <!--
+                x:Name
+                בתהליך היצירה של האובייקט מגדיר את שם המשתנה כך שניתן
+                לגשת אליו מהקוד בצורה קלה
+            -->
             <Label
                 x:Name="lblHide"
-                Text="NOW YOU SEE ME"
+                Text="קוקו! איפה אני?"
                 VerticalOptions="Center" />
+
+            <!--  https://learn.microsoft.com/en-us/dotnet/maui/user-interface/controls/label  -->
+            <!--  שימוש בתמונה מחייב אותנו מראש להגדיר גודל מתאים  -->
+            <!--  שימוש בתמונה מחייב אותנו מראש להגדיר גודל מתאים.  -->
+            <!--
+                התכונה ContentLayout
+                מאפשרת לנו להגידר את המיקום והמרחק של התמונה מהטקסט
+            -->
+            <!--  בכפתור הבא נראה פתרון המשתמש בפונט אייקון  -->
             <Button
                 x:Name="btnHide"
                 Margin="10"
                 Clicked="btnHide_Clicked"
                 ContentLayout="Left, 5"
+                HorizontalOptions="Center"
                 ImageSource="eye_crossed.png"
-                Text="הסתר">
+                Text="הסתר"
+                VerticalOptions="Center">
+                <!--  הכפתור עטוף במסגרת. אנחנו יכולים לשחק אם הגדרות שלה  -->
                 <Button.Shadow>
                     <Shadow
                         Brush="DarkBlue"
@@ -63,17 +100,50 @@
 
         <BoxView BackgroundColor="Blue" HeightRequest="5" />
         <VerticalStackLayout>
-            <Label Margin="10" Text="סיסמה" />
+            <Label
+                Margin="15,10,0,0"
+                HorizontalOptions="Center"
+                Text="סיסמה" />
             <Entry
+                x:Name="entType"
                 Completed="Entry_Completed"
-                ReturnType="Go"
+                IsPassword="True"
+                ReturnType="Done"
                 TextChanged="Entry_TextChanged"
                 WidthRequest="300" />
-            <Label x:Name="lblOldPass" />
+            <!--  השגיאה מוסתרת. רק כאשר הסיסמה לא עומדת בתנאים היא תוצג  -->
+            <Label x:Name="errorLbl" IsVisible="false" />
+            <!--  מציג את הערך הישן  -->
+            <Label x:Name="lblOldPass" HorizontalOptions="Center" />
+            <!--  OnIdion מאפשר ליצור הבדל עפי סוג מכשיר  -->
+            <!--  OnPlatform מאפשר ליצור הבדל לפי מערכת הפעלה  -->
             <Image
                 x:Name="Imgbot"
+                Margin="{OnIdiom Tablet=-70}"
                 Aspect="AspectFit"
-                Source="dotnet_bot.png" />
+                HeightRequest="{OnPlatform WinUI=300}"
+                Source="dotnet_bot.png"
+                WidthRequest="{OnPlatform WinUI=300}" />
+
+            <!--  אנחנו יכולים לעצב את המסגרת ולהשתמש בפונט אייקון  -->
+            <Button
+                Clicked="Swap_Clicked"
+                CornerRadius="60"
+                FontFamily="Pacifico"
+                FontSize="20"
+                HeightRequest="120"
+                Text="Swap"
+                TextColor="#43eb34"
+                WidthRequest="120">
+
+                <!--  הוספת פונט אייקון  -->
+                <Button.ImageSource>
+                    <FontImageSource
+                        FontFamily="MaterialSymbolsOutlined"
+                        Glyph="&#xe8d4;"
+                        Color="DarkSalmon" />
+                </Button.ImageSource>
+            </Button>
         </VerticalStackLayout>
     </VerticalStackLayout>
 

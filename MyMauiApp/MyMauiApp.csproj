@@ -59,10 +59,10 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\Cinzel-VariableFont_wght.ttf" />
+	  <None Remove="Resources\Fonts\MaterialSymbolsOutlined-VariableFont-wght.ttf" />
 	  <None Remove="Resources\Fonts\Pacifico-Regular.ttf" />
 	  <None Remove="Resources\Fonts\RubikDoodleShadow-Regular.ttf" />
 	  <None Remove="Resources\Images\eye_crossed.png" />
-	  <None Remove="Resources\Images\eye_slash.svg" />
 	  <None Remove="Resources\Splash\retro.svg" />
 	</ItemGroup>
 
