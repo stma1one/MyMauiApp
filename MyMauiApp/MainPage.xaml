@@ -81,7 +81,7 @@
             <Button
                 x:Name="btnHide"
                 Margin="10"
-                Clicked="btnHide_Clicked"
+                Clicked="BtnHide_Clicked"
                 ContentLayout="Left, 5"
                 HorizontalOptions="Center"
                 ImageSource="eye_crossed.png"

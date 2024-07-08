@@ -16,7 +16,7 @@
         /// </summary>
         /// <param name="sender">מייצג את האובייקט שהפעיל את האירוע</param>
         /// <param name="e">פרמטרים אם היו</param>
-        private void btnHide_Clicked(object sender, EventArgs e)
+        private void BtnHide_Clicked(object sender, EventArgs e)
         { 
             Button button = (Button)sender;//sender as Button
             if (button == btnHide)
